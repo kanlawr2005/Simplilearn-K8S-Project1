@@ -1,0 +1,24 @@
+nd: HorizontalPodAutoscaler
+
+apiVersion: autoscaling/v1
+
+metadata:
+
+  name: slearn-proj-hpa
+
+spec:
+
+  targetCPUUtilizationPercentage: 60
+
+  minReplicas: 3
+
+  maxReplicas: 10
+
+  scaleTargetRef:
+
+    apiVersion: apps/v1
+
+    kind: Deployment
+
+    name: slearnjproject
+
